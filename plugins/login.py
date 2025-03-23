@@ -15,7 +15,7 @@ from plugins.batch import UB, UC
 from utils.custom_filters import login_in_progress, set_user_step, get_user_step
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-model = "v3saver Team SPY"
+model = "v3saver 𝙼𝚁 𝚁𝙰𝙹𝙿𝚄𝚃"
 
 STEP_PHONE = 1
 STEP_CODE = 2
@@ -29,7 +29,7 @@ async def login_command(client, message):
     login_cache.pop(user_id, None)
     await message.delete()
     status_msg = await message.reply(
-        """Please send your phone number with country code
+        """login own risk 🙏 Please send your phone number with country code
 Example: `+12345678900`"""
         )
     login_cache[user_id] = {'status_msg': status_msg}
