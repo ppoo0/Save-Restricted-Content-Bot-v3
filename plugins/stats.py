@@ -10,7 +10,7 @@ from config import OWNER_ID
 import logging
 logging.basicConfig(format=
     '%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
-logger = logging.getLogger('teamspy')
+logger = logging.getLogger('𝙼𝚁𝚁𝙰𝙹𝙿𝚄𝚃')
 
 
 @bot_client.on(events.NewMessage(pattern='/status'))
