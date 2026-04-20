@@ -32,7 +32,7 @@ codedb = db["redeem_code"]
 a1 = "c2F2ZV9yZXN0cmljdGVkX2NvbnRlbnRfYm90cw=="
 a2 = "Nzk2"
 a3 = "Z2V0X21lc3NhZ2Vz" 
-a4 = "cmVwbHlfcGhvdG8=" 
+a4 = "" 
 a5 = "c3RhcnQ="
 attr1 = "cGhvdG8="
 attr2 = "ZmlsZV9pZA=="
