@@ -11,18 +11,29 @@ from config import LOG_GROUP, OWNER_ID, FORCE_SUB
 async def subscribe(app, message):
     if FORCE_SUB:
         try:
-          user = await app.get_chat_member(FORCE_SUB, message.from_user.id)
-          if str(user.status) == "ChatMemberStatus.BANNED":
-              await message.reply_text("You are Banned. Contact -- Team SPY")
-              return 1
+            user = await app.get_chat_member(FORCE_SUB, message.from_user.id)
+            if str(user.status) == "ChatMemberStatus.BANNED":
+                await message.reply_text("You are Banned. Contact -- Team SPY")
+                return 1
+
         except UserNotParticipant:
             link = await app.export_chat_invite_link(FORCE_SUB)
-            caption = f"Join our channel to use the bot"
-            await message.reply_photo(photo="https://graph.org/file/e453a252ac9bb3a92506a.jpg",caption=caption, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Now...", url=f"{link}")]]))
+            caption = "Join our channel to use the bot"
+
+            await message.reply_photo(
+                photo="TERA_IMAGE_LINK",
+                caption=caption,
+                reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton("Join Now...", url=f"{link}")]]
+                )
+            )
             return 1
+
         except Exception as ggn:
-            await message.reply_text(f"Something Went Wrong. Contact admins... with following message {ggn}")
-            return 1 
+            await message.reply_text(f"Something Went Wrong. {ggn}")
+            return 1
+
+    return 0
      
 @app.on_message(filters.command("set"))
 async def set(_, message):
