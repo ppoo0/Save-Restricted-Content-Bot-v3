@@ -21,7 +21,7 @@ async def subscribe(app, message):
             caption = "Join our channel to use the bot"
 
             await message.reply_photo(
-                photo="TERA_IMAGE_LINK",
+                photo="https://graph.org/file/e453a252ac9bb3a92506a.jpg",
                 caption=caption,
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton("Join Now...", url=f"{link}")]]
@@ -243,4 +243,13 @@ async def see_terms(client, callback_query):
     )
     await callback_query.message.edit_text(terms_text, reply_markup=buttons)
  
- 
+ @app.on_message(filters.command("start"))
+async def start_cmd(client, message):
+    join = await subscribe(client, message)
+    if join == 1:
+        return
+
+    await message.reply_photo(
+        photo="https://graph.org/file/e453a252ac9bb3a92506a.jpg",
+        caption="Welcome bhai 🔥"
+    )
